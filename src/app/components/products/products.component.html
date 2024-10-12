@@ -1,0 +1,17 @@
+<section *ngIf="listProducts">
+  <article class="card" *ngFor="let product of listProducts">
+      <div><p>{{product.title}}</p></div>
+      <figure>
+        <img src="{{product.images[0]}}" width="100%" height="100%" alt="{{product.title}}" srcset="">
+      </figure>
+      <div>
+        <div>
+          <button class="button">Ver</button>
+        </div>
+        <div>
+          <p style="font-weight: bold;">$ {{product.price}}</p>
+        </div>
+      </div>
+  </article>
+  <ngx-spinner bdColor = "rgba(245,239,255,0)" size = "medium" color = "#38b000" type = "square-loader" [fullScreen] = "false"><p style="color: black" > Cargando... </p></ngx-spinner>
+</section>
