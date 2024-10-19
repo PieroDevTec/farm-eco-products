@@ -1,0 +1,19 @@
+section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+section > figure {
+  width: 25%;
+  height: 85vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('https://img.freepik.com/foto-gratis/sonriente-joven-pelirroja-sosteniendo-telefono-poniendo-dedo-cabeza-aislada-verde_141793-73504.jpg?t=st=1728797019~exp=1728800619~hmac=3c35905a4ff83bd4b251afa39d1845babdca9f7637344a56defd17d266d6e7c7&w=740');
+}
+
+section > article {
+  width: 60%;
+  height: 85vh;
+}

@@ -1,6 +1,8 @@
 import { Component, OnInit,AfterViewInit } from '@angular/core';
 import { ProductsService } from "src/app/services/productsService";
 import { NgxSpinnerService } from "ngx-spinner";
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-products',
@@ -22,10 +24,23 @@ export class ProductsComponent implements OnInit,AfterViewInit {
     this.productsService.fnObtenerProductos().subscribe({
     next: (productsData) =>{
       this.listProducts = productsData;
-      console.log(this.listProducts);
       this.spinner.hide();
     }
    });
+
+
+   this.productsService.fnObtenerProducto(30).subscribe({
+    next:(product)=>{
+      console.log(product);
+    },
+    error:(err) => {
+      Swal.fire({
+        title: `<strong>${err.status}</strong>` ,
+        text: err.message,
+        icon: "error"
+      });
+    },
+   })
   }
 
   ngAfterViewInit(): void {

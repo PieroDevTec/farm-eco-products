@@ -10,13 +10,23 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProductsComponent } from './components/products/products.component';
+import { ContactComponent } from './components/contact/contact.component';
+
+
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    ProductsComponent
+    ProductsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +34,11 @@ import { ProductsComponent } from './components/products/products.component';
     HttpClientModule,
     CommonModule,
     BrowserAnimationsModule,
-    NgxSpinnerModule
+    NgxSpinnerModule.forRoot({type:'ball-spin-fade-rotating'}),
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

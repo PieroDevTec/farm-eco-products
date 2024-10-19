@@ -15,4 +15,8 @@ export class ProductsService {
   fnObtenerProductos():Observable<any>{
     return this.http.get<any[]>('https://api.escuelajs.co/api/v1/products?offset=0&limit=12');
   }
+
+  fnObtenerProducto(codigo:number):Observable<any>{
+    return this.http.get<any[]>(`https://api.escuelajs.co/api/v1/products/${codigo}`);
+  }
 }
